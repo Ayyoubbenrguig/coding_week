@@ -1,0 +1,28 @@
+.login-container {
+    margin-top: 50px;
+    width: 50%;
+    margin: auto;
+}
+.login-card {
+    width: 100%;
+    margin: auto;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.movie-info p {
+    margin: 0;
+    text-align: left; /* Alignement à gauche */
+}
+
+.movie-info .left-column {
+    flex-basis: 40%; /* Ajustez la largeur de la première colonne si nécessaire */
+}
+
+.movie-info .right-column {
+    flex-basis: 60%; /* Ajustez la largeur de la deuxième colonne si nécessaire */
+}

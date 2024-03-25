@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/w3.css') }}">
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+    <div class="w3-container login-container w3-round" style="padding-top: 60px; width: 80%;">
+        <h1 style="padding-bottom: 30px;" class="w3-center">Bienvenue !</h2>
+        <div class="w3-card-4 w3-light-grey login-card w3-round" style="width: 50%; ; margin: auto;">
+            <div class="w3-container w3-blue">
+                <h2 class="w3-center">Login</h2>
+            </div>
+            <form class="w3-container" action="/login" method="post">
+                <label for="username">Username:</label>
+                <input class="w3-input" type="text" id="username" name="username">
+                <label for="password">Password:</label>
+                <input class="w3-input" type="password" id="password" name="password">
+                <button class="w3-round w3-button w3-blue w3-margin-top w3-margin-bottom w3-block" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

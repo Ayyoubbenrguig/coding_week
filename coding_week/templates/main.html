@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/w3.css') }}">
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+
+    <div class="w3-container w3-center" style="margin-top: 25px;">
+        <div class="w3-card-4 w3-blue" style="width: 50%; margin: auto;">
+            <div class="w3-container">
+                <h1 class="w3-center">Movie Recommender System</h1>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-center" style="margin-top: 25px;">
+        <div class="w3-card-4 w3-light-grey w3-center" style="width:50%; margin: auto;">
+            <div class="w3-container w3-blue">
+                <h2>Enter User ID</h2>
+            </div>
+
+            <form class="w3-container" action="/main" method="post">
+                <h5 for="user_id">User ID</h5>
+                <input class="w3-input w3-margin-top" type="text" id="user_id" name="user_id">
+                <button style="width: 40%;" class="w3-center w3-button w3-blue w3-margin-top w3-margin-bottom w3-round" type="submit">Submit</button>
+            </form>
+    </div>    
+        <div class="w3-card-4 w3-light-grey w3-center" style="width:50%; margin: auto;">
+            {% if top_movies %}
+            <div class=" w3-margin-top">
+                <div class="w3-container w3-blue">
+                    <h2 class="w3-center">Top Recommended Movies</h2>
+                </div>
+                <ul class="w3-ul w3-card-4">
+                    {% for movie in top_movies %}
+                        <li class="w3-padding">
+                            <div class="movie-info">
+                                <div class="left-column">
+                                    <p>Ranking</p>
+                                    <p>Movie ID</p>
+                                    <p>Title</p>
+                                    <p>Genres</p>
+                                </div>
+                                <div class="right-column">
+                                    <p>{{ movie.ranking }}</p>
+                                    <p>{{ movie.id }}</p>
+                                    <p>{{ movie.title }}</p>
+                                    <p>{{ movie.genres }}</p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    
+</body>
+</html>
